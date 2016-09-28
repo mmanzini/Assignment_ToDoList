@@ -1,0 +1,194 @@
+/* this is a comment is css */
+
+html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+    font-family: 'helvetica Neue', Helvetica, Arial;
+    color: #82829C;
+}
+body{
+    display: flex;
+    justify-content: center;
+    background: #5A5EE8;
+    height: 100vh;
+    width: 100vw;
+    align-items: center;
+}
+.v-align-center{
+     align-items: center;
+}
+
+/*to do list*/
+.todolist{
+    display: flex;
+    flex: 0 0 50%;
+    flex-direction: column;
+    max-width: 700px;
+}
+
+.todolist section{
+    display: flex;
+    flex: 1 0;
+    flex-direction: column;
+}
+
+@media only screen and (max-width: 900px) {
+    .todolist{
+        flex: 0 0 80%;
+    }
+}
+@media only screen and (max-width: 500px) {
+    body{
+        align-items: stretch;
+    }
+    .todolist{
+        flex: 1 0;
+    }
+    .todolist section{
+        background: #fff;
+    }
+    .header h1{
+        margin-top: 5px;
+    }
+    .header h2{
+        position: absolute;
+        font-size: 20px;
+    }
+}
+
+/*header to do list*/
+
+.header{
+    flex: 0 0 80px;
+    background-color: #FBFBFF;
+    border-radius: 4px 4px 0 0;
+    display: flex;
+    border-bottom: solid 1px #E3EBF2;
+    justify-content: space-between;
+    padding: 0 30px 0 80px;
+}
+.header h1{
+    font-weight: 500;
+    color: #5559E4;
+}
+.thin-text{
+    font-weight: 300;
+}
+
+
+/*tasks list*/
+.task{
+    flex: 0 0 80px;
+    border-bottom: solid 1px #F0F4F8;
+    background-color: #ffffff;
+    transition: all 0.8s;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.task:hover{
+    background-color: #FBFBFF;
+}
+
+.task:first-child{
+    padding-top: 25px;
+}
+.task:last-child{
+    border-radius: 0 0 4px 4px;
+}
+
+.check{
+    display: flex;
+    flex: 6;
+    margin: 0 30px 0 30px;
+}
+.title{
+    display: flex;
+    flex: 1 0;
+    font-size: 18px;
+    font-weight: 400;
+    overflow: hidden;
+    max-height: 80px;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+}
+.date{
+    display: flex;
+    flex: 1;
+    margin: 0 30px 0 30px;
+    color: #C5C5D7;
+    font-size: 12px;
+    justify-content: flex-end;
+    text-align: right;
+}
+
+
+
+/*fab button*/
+.fab{
+    background-color: #FB6C6D;
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border-radius: 60px;
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    font-size: 30px;
+    line-height: 52px;
+    margin: 50px 0 0 12px;
+    transition: all 0.3s;
+    -webkit-box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
+    -moz-box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
+    box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
+}
+.fab:hover{
+    -webkit-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.3);
+    box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.3);
+}
+
+
+
+
+/*input style*/
+
+input[type="checkbox"] {
+  display: none;
+}
+label {
+  cursor: pointer;
+}
+input[type="checkbox"] + label:before {
+  border: 2px solid #CDCDDF;
+  background: #fff;
+  content: "\00a0";
+  display: inline-block;
+  font: 12px/1.5em sans-serif;
+  height: 18px;
+  margin: 0px 20px 0 0;
+  padding:0;
+  border-radius: 4px;
+  vertical-align: top;
+  width: 18px;
+  flex: 0 0 18px;
+  text-decoration: none;
+}
+input[type="checkbox"]:checked + label:before {
+  background: #FB6C6D;
+  border: 2px solid #FB6C6D;
+  color: #fff;
+  content: "\2713";
+  text-align: center;
+  text-decoration: none;
+}
+input[type="checkbox"]:checked + label:after {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+input[type="checkbox"]:checked + label {
+  color: #D6D6E4;
+  text-decoration: line-through;
+}
